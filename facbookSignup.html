@@ -1,0 +1,309 @@
+<DOCTYPE>
+<html>
+<head>
+    <title>facebook signup</title>
+    <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #meta {
+            font-size: 15px;
+            font-weight: 500;
+            margin-bottom: 1px;
+            text-align: left;
+        }
+        #title {
+            margin-top: 0px;
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+        #description{
+            margin-top: 0px;
+        }
+        .main{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            width: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            margin: 50px;
+        }
+        form{
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .name{
+            font-weight:600;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 100%;
+        }
+        .nameInput{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            
+        }
+        .nameInput input{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        ::placeholder{
+            font-weight: 400;
+        }
+        .nameInput input:hover {
+            border: 1px solid black;
+        }
+        .dob{
+            font-weight:600;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap:5px;
+        }
+        .dob div{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap:10px;
+            height:50px;
+            width: 100%;
+        }
+        .dob div select{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .dob div select:hover {
+            border: 1px solid black;
+        }
+        .gender{
+            font-weight:600;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap:5px;
+        }
+        .gender select{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .gender select:hover {
+            border: 1px solid black;
+        }
+        .mobile{
+            font-weight:600;
+            display: flex;
+            flex-direction: column;
+            gap:5px;
+            width: 100%;
+        }
+        .mobile input{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .mobile input:hover {
+            border: 1px solid black;
+        }
+        span{
+            color: rgb(24, 119, 242);
+            font-weight: bold;
+        }
+        .password{
+            display: flex;
+            flex-direction: column;
+            width:100%;
+            gap:5px;
+            font-weight: 600;
+        }
+        .password input{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .password input:hover {
+            border: 1px solid black;
+        }
+        .buttons{
+            display:flex;
+            flex-direction: column;
+            width: 100%;
+            gap:5px;
+        }
+        .buttons button{
+            border: 1px solid rgb(128, 128, 128, 0.8);
+            box-shadow: 5px 5px 10px rgb(128, 128, 128, 0.1);
+            height: 50px;
+            width: 100%;
+            border-radius: 50px;
+            padding: 15px;
+            
+        }
+        .acc-button:hover{
+            background-color: rgb(203, 201, 201);
+        }
+
+
+
+        @media screen and (min-width: 950px){
+            .container {
+                width: 40%;
+        }
+    }
+    </style>
+</head>
+<body>
+    <i class="fa-thin fa-angle-left"></i>
+    <div class="main">
+    <div class="container">
+    <p id="meta">Meta</p>
+    <h1 id="title">Get started on Facebook</h1>
+    <p id="description">Create an account to connect with friends, family and communities of people who share your intrests.</p>
+
+
+    <form>
+        <div class="name">
+            <label for="Name">Name</label>
+            <div class="nameInput">
+                <input type="text" id="Name" name="Name" placeholder="First name">
+                <input type="text" id="Name" name="Name" placeholder="Surname">
+            </div>
+        </div>
+
+        <div class="dob">
+            <label for="dob">Date of birth</label>
+           <div>
+            <select name="dob">
+                <option value="" selected disabled hidden>Day</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+                <option value="11">11</option>
+                <option value="12">12</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+                <option value="19">19</option>
+                <option value="20">20</option>
+                <option value="21">21</option>
+                <option value="22">22</option>
+                <option value="23">23</option>
+                <option value="24">24</option>
+                <option value="25">25</option>
+                <option value="26">26</option>
+                <option value="27">27</option>
+                <option value="28">28</option>
+                <option value="29">29</option>
+                <option value="30">30</option>
+                <option value="31">31</option>
+            </select>
+            <select name="dob" id="">
+                <option value="" selected disabled hidden>Month</option>
+                <option value="January">January</option>
+                <option value="February">February</option>
+                <option value="March">March</option>
+                <option value="April">April</option>
+                <option value="May">May</option>
+                <option value="June">June</option>
+                <option value="July">July</option>
+                <option value="August">August</option>
+                <option value="September">September</option>
+                <option value="October">October</option>
+                <option value="November">November</option>
+                <option value="December">December</option>
+            </select>
+            <select name="dob" id="">
+                <option value="" selected disabled hidden>Year</option>
+                <option value="2010">2010</option>
+                <option value="2009">2009</option>
+                <option value="2008">2008</option>
+                <option value="2007">2007</option>
+                <option value="2006">2006</option>
+                <option value="2005">2005</option>
+                <option value="2004">2004</option>
+                <option value="2003">2003</option>
+                <option value="2002">2002</option>
+                <option value="2001">2001</option>
+            </select>
+           </div>
+        </div>
+
+        <div class="gender">
+            <label for="gender">Gender</label>
+        <select name="gender" id="">
+            <option value="" selected disabled hidden>Select Your Gender</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="custom">Custom</option>
+        </select>
+        </div>
+
+        <div class="mobile">
+            <label for="mobile number or email">Mobile number or email address</label>
+        <input type="text" id="mobile number or email" name="mobile number or email" placeholder="Mobile number or email address">
+        <p>You may receive notifications from us. <span>Learn why we ask for contact information</span></p>
+        </div>
+
+        <div class="password">
+            <label for="Password">Password</label>
+        <input type="password" id="Password" name="Password" placeholder="Password">
+        </div>
+
+
+        <div class="text">
+        <p>People who use our service may have uploaded your contact information to Facebook. <span>Learn more</span> </p>
+        <p>
+        By tapping Submit, you agree to create an account and to Facebook's <span>Terms</span>, <span>Privacy Policy</span> and <span>Cookies Policy</span>.</p>
+        <p>
+        The <span>Privacy Policy</span> describes the ways we can use the information we collect when you create an account. For example, we use this information to provide, personalise and improve our products, including ads.
+        </p>
+    </div>
+
+        <div class="buttons">
+        <button type="submit" style="background-color: rgb(24, 119, 242); font-weight: bolder; color:white;">Submit</button>
+        <button type="button" style="font-weight: bolder;" class="acc-button">I already have an account</button>
+            </div>
+    </form>
+    </div>
+</div>
+</body>
+</html>
