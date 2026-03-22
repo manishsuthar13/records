@@ -63,6 +63,19 @@
             background-color: rgb(46, 95, 231);
             color: white;
         }
+        #confirm{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(11, 11, 11, 0.5);
+            visibility: hidden;
+        }
     </style>
 </head>
 <body>
@@ -75,22 +88,19 @@
     </header>
     <main>
         <div class="tasks">
-            <li id="task0">
-                <div class="detail">
-                    <input type="checkbox" name="task1">
-                    <label for="task1">Buy groceries for next week</label>
-                </div>
-                <div class="button">
-                    <button type="button" onClick="removeTask()">DELETE</button>
-                </div>
-            </li>
         </div>
-
+        <div id="confirm" >
+            <p>Are you sure?</p>
+            <div>
+                <button type="button" id="confirmBtn" onClick="confirmTask()">Yes</button>
+                <button type="button" id="cancelBtn" onClick="cancelTask()">No</button>
+            </div>
+        </div>
     </main>
     <script>
+        let tasks = [];
         let count = 0;
         function addTask(){
-            count++;
             let newTask = document.getElementById('newTask').value
             let newhtml = `<li id="task${count}">
                 <div class="detail">
@@ -98,16 +108,30 @@
                     <label for="task1">${newTask}</label>
                 </div>
                 <div class="button">
-                    <button type="button" onClick="removeTask()">DELETE</button>
+                    <button type="button" id="btn${count}" onClick="removeTask(${count})">DELETE</button>
                 </div>
             </li>`
-            document.querySelector('.tasks').insertAdjacentHTML('beforeend',newhtml )
+            tasks.push(newhtml);
+            document.querySelector('.tasks').insertAdjacentHTML('beforeend',tasks[count])
+            count++;
+            document.getElementById('newTask').value = '';
+                }
+
+        function removeTask(count){
+            document.getElementById('confirm').style.visibility = 'visible';
+            const confirmBtn = document.getElementById('confirmBtn')
+            confirmBtn.addEventListener('click',function(){
+                confirmTask(count);
+            })
         }
 
-        function removeTask(){
-            const taskToRemove = document.getElementById(`task${count}`);
-            taskToRemove.remove();
-            count--;
+        function confirmTask(count){
+                let rmvtask = document.getElementById(`task${count}`)
+                rmvtask.remove();
+                document.getElementById('confirm').style.visibility = 'hidden';
+            }  
+        function cancelTask(){
+            document.getElementById('confirm').style.visibility = 'hidden';
         }
     </script>
 </body>
